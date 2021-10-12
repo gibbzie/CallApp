@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #FFFFFF;
+  margin: 80px 10px;
+  background: linear-gradient(340deg, rgba(74,191,255,1) 0%, rgba(101,157,230,1) 100%);
+}
+
+video {
+  margin: 2rem;
+}
+
+#remoteVideo {
+  width: 90vw;
+  height: auto;
+  border-radius:40px;
+  border: 3px solid #FFFFFF;
+  background: linear-gradient(340deg, rgba(230,87,63,1) 0%, rgba(251,142,67,1) 100%);
+}
+
+#webcamVideo {
+  width: 20vw;
+  height: auto;
+  background: linear-gradient(160deg, rgba(230,87,63,1) 0%, rgba(251,142,67,1) 100%);
+  border-radius: 15px 50px;
+  border: 2px solid #FFFFFF;
+}
+
+#dragMe {
+  position: absolute;
+  bottom: 8px;
+  right: 16px;
+  font-size: 18px;
+}
+
+button {
+  border-radius: 10px;
+  font-family: 'Montserrat', sans-serif;
+  border: 2px solid #FFFFFF;
+  padding: 10px 20px;
+  margin: 5px;
+/*  background: linear-gradient(305deg, rgba(224,213,105,1) 0%, rgba(67,153,159,1) 100%);*/
+}
+
+#callInput {
+  border-radius: 10px;
+  padding: 10px 20px;
+  border: 2px solid #FFFFFF;
+}

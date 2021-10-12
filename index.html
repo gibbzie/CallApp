@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="png" href="portal.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Your Portal to Me</title>
+  </head>
+  <body>
+
+      <button id="webcamButton">Start webcam</button>
+
+      <span>
+        <button id="callButton" disabled>Create Call</button>
+      </span>
+
+      <span style="display: block;">
+
+
+        <input id="callInput" placeholder="Paste Here to Join Call"/>
+        <button id="answerButton" disabled>Join Call</button>
+      </span>
+
+      <span>
+        <video id="remoteVideo" autoplay playsinline></video>
+
+        <span id="dragMe">
+          <video id="webcamVideo" autoplay playsinline></video>
+        </span>
+      </span>
+
+      <button id="hangupButton" disabled>Hangup</button>
+
+    <script type="module" src="/main.js"></script>
+    <script type="text/javascript" src="draggable.js"></script>
+    <script type="text/javascript">
+      window.onload = function() {
+        var drag = new Draggable('dragMe');
+      }
+    </script>
+
+  </body>
+</html>
