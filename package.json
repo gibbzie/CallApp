@@ -7,10 +7,10 @@
     "serve": "vite preview"
   },
   "devDependencies": {
-    "vite": "^2.0.5"
+    "vite": "^2.0.5",
+    "vite-plugin-mkcert": "^1.5.2"
   },
   "dependencies": {
-    "firebase": "^8.10.0",
-    "vite-plugin-mkcert": "^1.5.1"
+    "firebase": "^8.2.10"
   }
 }

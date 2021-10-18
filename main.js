@@ -3,7 +3,6 @@ import './style.css';
 import firebase from 'firebase/app';
 import 'firebase/firestore';
 
-// Your web app's Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyA37ovhknkdl4Z3ZncLZ9S487IcYe_5xrQ",
   authDomain: "callapp-6e504.firebaseapp.com",
@@ -12,7 +11,6 @@ const firebaseConfig = {
   messagingSenderId: "158283261786",
   appId: "1:158283261786:web:860a5937f7f509982d7563"
 };
-//I DID THIS const app = initializeApp(firebaseConfig);
 
 if (!firebase.apps.length) {
   firebase.initializeApp(firebaseConfig);
