@@ -36,9 +36,13 @@ const webcamButton = document.getElementById('webcamButton');
 const webcamVideo = document.getElementById('webcamVideo');
 const callButton = document.getElementById('callButton');
 const callInput = document.getElementById('callInput');
+const shareScreenButton = document.getElementById('shareScreenButton');
+const screenVideo = document.getElementById('screenVideo');
 const answerButton = document.getElementById('answerButton');
 const remoteVideo = document.getElementById('remoteVideo');
 const hangupButton = document.getElementById('hangupButton');
+
+let senders = [];
 
 // 1. Setup media sources
 
@@ -47,15 +51,16 @@ webcamButton.onclick = async () => {
   remoteStream = new MediaStream();
 
   // Push tracks from local stream to peer connection
-  localStream.getTracks().forEach((track) => {
-    pc.addTrack(track, localStream);
-  });
+	localStream.getTracks().forEach((track) => {
+		senders.push(track);
+		pc.addTrack(track, localStream);
+	});
 
   // Pull tracks from remote stream, add to video stream
   pc.ontrack = (event) => {
     event.streams[0].getTracks().forEach((track) => {
       remoteStream.addTrack(track);
-    });
+    })
   };
 
   webcamVideo.srcObject = localStream;
@@ -70,6 +75,7 @@ webcamButton.onclick = async () => {
 
 // 2. Create an offer
 callButton.onclick = async () => {
+	answerButton.disabled = true;
   // Reference Firestore collections for signaling
   const callDoc = firestore.collection('calls').doc();
   const offerCandidates = callDoc.collection('offerCandidates');
@@ -113,6 +119,8 @@ callButton.onclick = async () => {
   });
 
   hangupButton.disabled = false;
+  shareScreenButton.disabled = false;
+	remoteVideo.controls = true;
 };
 
 // 3. Answer the call with the unique ID
@@ -150,4 +158,30 @@ answerButton.onclick = async () => {
       }
     });
   });
+  shareScreenButton.disabled = false;
+	remoteVideo.controls = true;
+};
+
+// Screen Sharing https://www.youtube.com/watch?v=X8QHHB7DA90 06:21
+
+let screenStream = null;
+let screenStreamTrack = null;
+
+shareScreenButton.onclick = async () => {
+	screenStream = await navigator.mediaDevices.getDisplayMedia({ cursor: true });
+
+	// get mediaTrack out of mediaStream
+	screenStreamTrack = screenStream.getTracks()[0]
+
+	// replace webcam video track with screen
+	pc.getSenders().find(index => index.track.kind === 'video').replaceTrack(screenStreamTrack);
+
+	// replaces the original webcam once the stop sharing button is clicked
+	screenStreamTrack.onended = () => {
+		let originalWebcamVideo = senders.find(index => index.kind === 'video');
+		pc.getSenders().find(index => index.track.kind === 'video').replaceTrack(originalWebcamVideo);
+		webcamVideo.srcObject = localStream;
+	}
+
+	webcamVideo.srcObject = screenStream;
 };

@@ -4,17 +4,21 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="png" href="portal.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>You Portal to Me</title>
+    <title>Your Portal to Me</title>
   </head>
   <body>
     <div>
       <button id="webcamButton">Start Webcam</button>
       <button id="callButton" disabled>Create Call</button>
     </div>
+
     <input id="callInput" placeholder="Paste Code Here" />
     <button id="answerButton" disabled>Answer</button>
 
-
+    <div>
+        <!-- add disabled again -->
+    <button id="shareScreenButton" disabled>Share Screen</button>
+    </div>
 
     <div class="videos">
       <span>
@@ -24,10 +28,11 @@
         <video id="remoteVideo" autoplay playsinline></video>
       </span>
 
+      <!--<span>
+          <video controls id="screenVideo" autoplay playsinline></video>
+      </span> -->
+
     <button id="hangupButton" disabled>Hangup</button>
-    <p>
-      Press Control C in the Terminal to kill the server.
-    </p>
 
     </div>
 
