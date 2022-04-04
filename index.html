@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="png" href="/CallApp/assets/portal.cff314af.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Your Portal to Me</title>
+  <script type="module" crossorigin src="/CallApp/assets/index.54b25bb1.js"></script>
+  <link rel="modulepreload" href="/CallApp/assets/vendor.519c7c38.js">
+  <link rel="stylesheet" href="/CallApp/assets/index.8eeec77a.css">
+</head>
+  <body>
+    <div>
+      <button id="webcamButton">Start Webcam</button>
+      <button id="callButton" disabled>Create Call</button>
+    </div>
+
+    <input id="callInput" placeholder="Paste Code Here" />
+    <button id="answerButton" disabled>Answer</button>
+
+    <div>
+        <!-- add disabled again -->
+    <button id="shareScreenButton" disabled>Share Screen</button>
+    </div>
+
+    <div class="videos">
+      <span>
+        <video id="webcamVideo" autoplay playsinline></video>
+      </span>
+      <span>
+        <video id="remoteVideo" autoplay playsinline></video>
+      </span>
+
+      <!--<span>
+          <video controls id="screenVideo" autoplay playsinline></video>
+      </span> -->
+
+    <button id="hangupButton" disabled>Hangup</button>
+
+    </div>
+
+    
+
+  </body>
+</html>
