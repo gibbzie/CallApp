@@ -7,7 +7,7 @@ body {
   text-align: center;
   color: #FFFFFF;
   margin: 80px 10px;
-  background: linear-gradient(340deg, rgba(74,191,255,1) 0%, rgba(101,157,230,1) 100%);
+  background: linear-gradient(155deg, rgba(76,96,211,1) 0%, rgba(255,220,130,1) 40%, rgba(255,220,130,1) 60%, rgba(209,46,146,1) 100%);
 }
 
 video {
@@ -19,13 +19,13 @@ video {
   height: auto;
   border-radius:40px;
   border: 3px solid #FFFFFF;
-  background: linear-gradient(340deg, rgba(230,87,63,1) 0%, rgba(251,142,67,1) 100%);
+  background: linear-gradient(155deg, rgba(163,163,163,1) -20%, rgba(255,255,255,1) 50%, rgba(163,163,163,1) 120%);
 }
 
 #webcamVideo {
   width: 20vw;
   height: auto;
-  background: linear-gradient(160deg, rgba(230,87,63,1) 0%, rgba(251,142,67,1) 100%);
+  background: linear-gradient(155deg, rgba(204,204,204,1) -10%, rgba(255,255,255,1) 50%, rgba(204,204,204,1) 140%);
   border-radius: 15px 50px;
   border: 2px solid #FFFFFF;
 }
@@ -43,7 +43,11 @@ button {
   border: 2px solid #FFFFFF;
   padding: 10px 20px;
   margin: 5px;
-/*  background: linear-gradient(305deg, rgba(224,213,105,1) 0%, rgba(67,153,159,1) 100%);*/
+  background: linear-gradient(345deg, rgba(204,204,204,1) 0%, rgba(255, 255, 255, 1) 60%);
+}
+
+button:disabled {
+  background: white;
 }
 
 #callInput {
