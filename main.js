@@ -31,6 +31,8 @@ const pc = new RTCPeerConnection(servers);
 let localStream = null;
 let remoteStream = null;
 
+let senders = [];
+
 // HTML elements
 const webcamButton = document.getElementById('webcamButton');
 const webcamVideo = document.getElementById('webcamVideo');
